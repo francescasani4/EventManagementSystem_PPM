@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block title %} CREAZIONE CATEGORIA {% endblock title %}
+
+{% block content %}
+
+    <p style="margin-top: 5px; margin-left: 25px">
+        <a href="{% url 'evento:homepage' %}" class="link-dark"> HomePage </a>
+    </p>
+    <div class="m-4">
+        <h1 style="color: darkcyan;"> Crea la categoria </h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <button class="btn btn-outline-secondary ml-2" type="submit" style="border-color: darkcyan;">
+                Crea
+            </button>
+            <button class="btn btn-outline-secondary ml-2" type="reset" style="border-color: darkcyan;">
+                Cancella
+            </button>
+        </form>
+    </div>
+
+{% endblock %}

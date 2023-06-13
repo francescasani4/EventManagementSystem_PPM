@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} AUTENTICAZIONE NEGATA {% endblock title %}
+
+{% block content %}
+    <h1 style="color: red; text-align: center; margin-top: 5px">
+        <b> ERRORE: </b>
+    </h1>
+    <div class="d-flex justify-content-center mt-3">
+        <div class="card col-11" style="background-color: lightgrey;">
+            <div class="row g-0">
+                <div class="card-body" style="text-align: center">
+                    <h2 class="card-title" style="color: darkcyan">
+                        Non sei autorizzato ad eseguire questo tipo di operazione!
+                    </h2>
+                    <p style="margin-top: 5px">
+                        <a href="{% url 'evento:homepage' %}" class="link-dark"> Torna alla HomePage </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

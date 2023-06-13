@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block title %} ESCI {% endblock title %}
+
+{% block content %}
+    {% csrf_token %}
+    <h1 style="color: red; text-align: center; margin-top: 5px">
+        <b> Attenzione </b>
+    </h1>
+    <div class="d-flex justify-content-center mt-3">
+        <div class="card col-11" style="background-color: lightgrey;">
+            <div class="row g-0">
+                <div class="card-body" style="text-align: center">
+                    <h2 class="card-title" style="color: darkcyan">
+                        Sei sicuro di voler uscire?
+                    </h2>
+                    <button type="submit" class="btn" style="background-color: lightgrey; border-color: darkcyan">
+                        <a href="{%  url 'evento:homepage' %}" class="link-dark link-underline-opacity-0" > Log Out </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

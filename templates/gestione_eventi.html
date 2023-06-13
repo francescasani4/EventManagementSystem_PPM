@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %} GESTIONE EVENTI {% endblock title %}
+
+{% block content %}
+    <p style="margin-top: 5px; margin-left: 25px">
+        <a href="{% url 'evento:homepage' %}" class="link-dark"> HomePage </a>
+    </p>
+    <h1 style="color: darkcyan; text-align: center; margin-top: 5px"> Gestione degli eventi creati  </h1>
+
+    <ul>
+        <div class="row blank">
+            {% for evento in eventi %}
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-3 mt-3">
+                    <div class="card" style="width: 15rem;">
+                        {% if evento.immagine %}
+                        <img src="{{ MEDIA_URL }}{{ evento.immagine }}" class="card-img-top" alt="{{ evento.titolo }}">
+                        {% endif %}
+                        <div class="card-body">
+                        <h5 class="card-title">
+                            {{ evento.titolo }}
+                        </h5>
+                        <p class="sub-title mb-2 text-body-secondary"> Data: {{ evento.data }} <br>
+                            Orario: {{ evento.orario }}<br>
+                            Luogo: {{ evento.luogo }}
+                        </p>
+                        <a href="{% url 'evento:modifica_evento' titolo=evento.titolo %}" class="btn btn-outline-secondary" style="border-color: darkcyan"> Modifica </a>
+                        <a href="{% url 'evento:rimuovi_evento' titolo=evento.titolo %}" class="btn btn-outline-secondary" style="border-color: darkcyan"> Rimuovi </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+                <div class="d-flex justify-content-center mt-3">
+                    <div class="card col-11" style="background-color: lightgrey;">
+                        <div class="row g-0">
+                            <div class="card-body" style="text-align: center">
+                                <h2 class="card-title" style="color: darkcyan">
+                                    Non sono stati creati eventi
+                                </h2>
+                                <a href="{%  url 'evento:crea_evento' %}" class="link-dark" > Crea un evento </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </ul>
+
+
+{% endblock %}

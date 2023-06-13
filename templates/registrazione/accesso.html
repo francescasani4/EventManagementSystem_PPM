@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block title %} ACCESSO {% endblock title %}
+
+{% block content %}
+
+    <div class="m-4">
+        <h1 style="color: darkcyan;"> Accesso area riservata </h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button class="btn btn-outline-secondary ml-2" type="submit" style="border-color: darkcyan">
+                Accedi
+            </button>
+        </form>
+        <p style="margin-top: 5px">
+            Non sei ancora registrato?
+            <a href="{% url 'evento:registrazione' %}" class="link-dark"> Registrati </a>
+        </p>
+    </div>
+
+{% endblock %}

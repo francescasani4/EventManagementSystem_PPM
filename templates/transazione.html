@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} PAGAMENTO IN CORSO {% endblock title %}
+
+{% block content %}
+    <h1 style="color: red; text-align: center; margin-top: 5px">
+        <b> Pagamento in corso... </b>
+    </h1>
+    <div class="d-flex justify-content-center mt-3">
+    <a href="{% url 'evento:pagato' %}">
+        <button class="btn btn-outline-secondary ml-2" type="submit" style="border-color: darkcyan">
+                Autorizza pagamento
+        </button>
+    </a>
+    </div>
+{% endblock %}

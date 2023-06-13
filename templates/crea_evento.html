@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block title %} CREAZIONE EVENTO {% endblock title %}
+
+{% block content %}
+
+    <p style="margin-top: 5px; margin-left: 25px">
+        <a href="{% url 'evento:homepage' %}" class="link-dark"> HomePage </a>
+    </p>
+    <div class="m-4">
+        <h1 style="color: darkcyan;"> Crea il tuo evento </h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <div class="m-2" style="background-color: cadetblue; opacity: 85%">
+            <p class="m-4 p-2">
+                Se la categoria di appartenenza dell'evento non è presente aggiugnila
+                <a href="{% url 'evento:crea_categoria' %}"> Crea </a> <br>
+                <b>IMPORTANTE:</b> Il valore 100000000 nei campi capienza massima e posti disponibili indica che non si ha capienza massima. <br>
+                Selezionare anche None come categori oltre quella desiderata.
+            </p>
+                </div>
+
+            <button class="btn btn-outline-secondary ml-2" type="submit" style="border-color: darkcyan;">
+                Crea
+            </button>
+            <button class="btn btn-outline-secondary ml-2" type="reset" style="border-color: darkcyan;">
+                Cancella
+            </button>
+        </form>
+    </div>
+
+{% endblock %}

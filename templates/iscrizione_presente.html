@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} ISCRIZIONE PRESENTE  {% endblock title %}
+
+{% block content %}
+    <h1 style="color: red; text-align: center; margin-top: 5px">
+        <b> ERRORE: </b>
+    </h1>
+    <div class="d-flex justify-content-center mt-3">
+        <div class="card col-11" style="background-color: lightgrey;">
+            <div class="row g-0">
+                <div class="card-body" style="text-align: center">
+                    <h2 class="card-title" style="color: darkcyan">
+                        Hai già acquistato il biglietto e sei già iscritto all'evento!
+                    </h2>
+                    <p style="padding-top: 3px">
+                        <a href="{% url 'evento:info_profilo' %}" class="link-dark"> Visualizza Profilo </a>
+                    </p>
+                    <p>
+                        <a href="{% url 'evento:homepage' %}" class="link-dark"> Torna alla HomePage </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

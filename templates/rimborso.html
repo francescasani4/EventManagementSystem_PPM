@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} RIMBORSO EFFETTUATO {% endblock title %}
+
+{% block content %}
+    <h1 style="color: red; text-align: center; margin-top: 5px">
+        <b> Attenzione </b>
+    </h1>
+    <div class="d-flex justify-content-center mt-3">
+        <div class="card col-11" style="background-color: lightgrey;">
+            <div class="row g-0">
+                <div class="card-body" style="text-align: center">
+                    <h2 class="card-title" style="color: darkcyan">
+                        Rimborso effettuato
+                    </h2>
+                    <p style="margin-top: 5px">
+                        <a href="{% url 'evento:homepage' %}" class="link-dark"> Torna alla HomePage </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
