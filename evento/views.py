@@ -137,6 +137,7 @@ def modifica_evento(request, titolo):
 
         if form.is_valid():
             evento = form.save()
+            evento.posti_disponibili = evento.capienza_massima
             evento.save()
             return redirect('evento:homepage')
     else:
