@@ -21,11 +21,12 @@
                     <p class="card-text"> {{ evento.descrizione }} </p>
                     <p class="card-text">
                         <strong> Info evento: </strong> <br>
-                        Data: {{ evento.data }} <br>
-                        Orario: {{ evento.orario }} <br>
-                        Luogo: {{ evento.luogo }} <br>
-                        Capienza massima: {{ evento.capienza_massima }} <br>
-                        Posti disponibili: {{ evento.posti_disponibili }}
+                        <i> Data: </i> {{ evento.data }} <br>
+                        <i> Orario: </i> {{ evento.orario }} <br>
+                        <i> Luogo: </i> {{ evento.luogo }} <br>
+                        <i> Capienza massima: </i> {{ evento.capienza_massima }} <br>
+                        <i> Posti disponibili: </i> {{ evento.posti_disponibili }} <br>
+                        <i> Programma: </i> <br> {{ evento.programma }}
                     </p>
                     <p class="card-text">
                         <small class="text-body-secondary"> Creato da - {{ evento.utente_creatore }} </small>
