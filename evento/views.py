@@ -117,6 +117,7 @@ def crea_evento(request):
         if form.is_valid():
             evento = form.save(commit=False)
             evento.utente_creatore = request.user
+            evento.posti_disponibili = evento.capienza_massima
             evento.save()
             return redirect('evento:lista_eventi')
     else:

@@ -15,7 +15,7 @@ class UtenteForm(UserCreationForm):
 class EventoForm(forms.ModelForm):
     class Meta:
         model = Evento
-        fields = ['titolo', 'descrizione', 'immagine', 'data', 'orario', 'luogo', 'categoria', 'utente_creatore', 'capienza_massima', 'posti_disponibili', 'programma']
+        fields = ['titolo', 'descrizione', 'immagine', 'data', 'orario', 'luogo', 'categoria', 'capienza_massima', 'programma']
 
 class CategoriaForm(forms.ModelForm):
     class Meta:

@@ -12,7 +12,7 @@ class Evento(models.Model):
     titolo = models.CharField(max_length=100, primary_key=True)
     descrizione = models.TextField()
     data = models.DateField()
-    orario = models.TimeField(default=datetime.time)
+    orario = models.TimeField()
     luogo = models.CharField(max_length=100)
     programma = models.TextField(default='Non disponibile')
     immagine = models.ImageField(upload_to='event_image_upload_path', null=True, blank=True)
